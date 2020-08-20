@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="kullanici.master.cs" Inherits="SiteBlog.kullanici" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>BLOG SİTESİ</title>
+    <link href="kullanici.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="kutu"> 
+            <div class="slider"></div>
+            <div class="menu"></div>
+            <div class="govde">
+                 
+                <div class="govdesol">
+                    <div class="govdesolbaslik"></div> 
+                    <div class="govdesolicerik"></div>  
+                </div>  
+                <div class="govdesag"></div>  
+            </div> 
+            <div class="alt"></div>  
+        </div >
+    </form>
+</body>
+</html>

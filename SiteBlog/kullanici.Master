@@ -9,22 +9,104 @@
     <link href="kullanici.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script src="slider JS/jquery.js"></script>
+    <script src="slider JS/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="slider JS/amazingslider-1.css">
+    <script src="slider JS/initslider-1.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 4px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="kutu"> 
             <div class="slider"></div>
-            <div class="menu"></div>
+            <div class="menu">
+                <div style="width: 269px; height: 40px; border-right-style: dotted; border-right-width: 1px; float: left; color: #FFFFFF; font-size: 24px; text-align: center; line-height: 40px">
+                    BLOG |ozanvncn</div>
+                <div style="width: 700px; height: 40px; float: right">
+                    <a href="default.aspx"><div class="menubuton">
+                        Bloğum</div></a>
+                    <a href="hakkimda.aspx"><div class="menubuton">
+                        Hakkımda
+                    </div ></a>
+                    <a href="iletisim.aspx"><div class="menubuton">
+                        İletişim
+                    </div></a>
+                </div>
+            </div>
             <div class="govde">
                  
                 <div class="govdesol">
-                    <div class="govdesolbaslik"></div> 
-                    <div class="govdesolicerik"></div>  
+                    <div class="govdesolbaslik" style="color: #FFFFFF">Duyurular</div> 
+                    <div class="govdesolicerik">
+                        <asp:DataList ID="dl_duyuru" runat="server" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" Height="16px" Width="100%">
+                            <AlternatingItemStyle BackColor="#F7F7F7" />
+                            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                            <ItemStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                            <ItemTemplate>
+                                <table class="auto-style1">
+                                    <tr>
+                                        <td class="auto-style2" style="background-color: #FFFFFF">
+                                            <asp:Image ID="Image1" runat="server" Height="30px" ImageUrl='<%# Eval("duyurularResim") %>' Width="30px" />
+                                        </td>
+                                        <td style="background-color: #FFFFFF; color: #333333;">
+                                            <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("duyurularBaslik") %>'></asp:Literal>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="background-color: #FFFFFF; color: #333333;">
+                                            <asp:Literal ID="Literal2" runat="server" Text='<%# Eval("duyurularIcerik") %>'></asp:Literal>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="background-color: #FFFFFF; text-align: right; color: #333333;">
+                                            <asp:Literal ID="Literal3" runat="server" Text='<%# Eval("duyurularTarih","{0:dd MMMM yyyy}") %>'></asp:Literal>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                            <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                        </asp:DataList>
+                    </div>  
+                    <div style="height:30px; float:left; width:100%;" ></div>
+                    <div class="govdesolbaslik" style="color: #FFFFFF">Kategoriler</div> 
+                    <div class="govdesolicerik">
+                        <asp:DataList ID="dl_kategori" runat="server" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" Width="100%">
+                            <AlternatingItemStyle BackColor="#F7F7F7" />
+                            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                            <ItemStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                            <ItemTemplate>
+                                <table class="auto-style1">
+                                    <tr>
+                                        <td>
+                                            <asp:Image ID="Image2" runat="server" Height="30px" ImageUrl='<%# Eval("kategoriResim") %>' Width="30px" />
+                                        </td>
+                                        <td style="width: 230px; text-decoration: none; font-size: large; color: #333333;">
+                                           <a href="kategoridetay.aspx?kategoriID=<%#Eval("kategoriID") %>"> <asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal></a>
+                                            &nbsp;(<asp:Literal ID="Literal5" runat="server" Text='<%# Eval("kategoriAdet") %>'></asp:Literal>
+                                            )</td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                            <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                        </asp:DataList>
+                    </div>
                 </div>  
-                <div class="govdesag"></div>  
+                <div class="govdesag">
+                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>  
             </div> 
             <div class="alt"></div>  
-        </div >
+        </div>
     </form>
 </body>
 </html>

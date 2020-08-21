@@ -1,26 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/kullanici.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="SiteBlog._default" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/kullanici.Master" AutoEventWireup="true" CodeBehind="kategoridetay.aspx.cs" Inherits="SiteBlog.kategoridetay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
-    <style type="text/css">
-        .auto-style3 {
-            width: 690px;
-            height: 40px;
-            float: left;
-        }
-        .auto-style4 {
-            width: 690px;
-            height: 20px;
-            float: left;
-        }
-    </style>
-    
 </asp:Content>
-
-
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
-    <div style="width:690px;height:auto; margin:0 auto;">
-        <asp:DataList ID="dl_makale" runat="server" Width="690px">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <div style="width:690px;height:auto; margin:0 auto;">
+        <asp:DataList ID="dl_kategori" runat="server" Width="690px">
             <ItemTemplate>
                 <div style="width:690px;margin:0 auto;height:auto;">
                     <div class="auto-style3" style="background-color: #C0C0C0; background-repeat: repeat-x; line-height: 40px;">
@@ -29,7 +12,7 @@
                             <asp:Image ID="Image3" runat="server" Height="40px" ImageUrl='<%# Eval("kategoriResim") %>' Width="40px" />
                         </div>
                         <div style="width: 650px; height: 40px; float: left">
-                            <a href="makaledetay.aspx?makaleID=<%#Eval("makaleID") %>"><asp:Label ID="Label1" runat="server" Font-Size="20pt" Text='<%# Eval("makaleBaslik") %>' ForeColor="#333333"></asp:Label></a>
+                           <a href="makaledetay.aspx?makaleID=<%# Eval("makaleID") %>"> <asp:Label ID="Label1" runat="server" Font-Size="20pt" Text='<%# Eval("makaleBaslik") %>' ForeColor="#333333"></asp:Label></a>
                         </div>
 
                     </div>
@@ -64,6 +47,3 @@
         </asp:DataList>
     </div>
 </asp:Content>
-
-
-

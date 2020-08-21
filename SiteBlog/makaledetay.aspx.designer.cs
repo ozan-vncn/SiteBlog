@@ -11,7 +11,7 @@ namespace SiteBlog
 {
 
 
-    public partial class _default
+    public partial class makaledetay
     {
 
         /// <summary>

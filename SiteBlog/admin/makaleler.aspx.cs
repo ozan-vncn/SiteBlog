@@ -67,6 +67,10 @@ namespace SiteBlog.admin
 
                 SqlCommand cmdmekle = new SqlCommand("insert into Makale(makaleBaslik,makaleOzet,makaleIcerik,makaleResim,kategoriID) Values('" + txt_makaleBaslik.Text + "','" + txt_makaleOzet.Text + "','" + txt_makaleIcerik.Text + "','/sresim" + fu_slider.FileName + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
                 cmdmekle.ExecuteNonQuery();
+
+                SqlCommand cmdkadet = new SqlCommand("Update Kategori set kategoriAdet=kategoriAdet+1 where kategoriID='"+ddl_kategori.SelectedValue+"'",baglan.baglan());
+                cmdkadet.ExecuteNonQuery();
+
                 Response.Redirect("makaleler.aspx");
             }
             else

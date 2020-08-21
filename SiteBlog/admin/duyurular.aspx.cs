@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using System.Data;
+
 using System.Data.SqlClient;
-using System.Data.SqlClient;
+
 namespace SiteBlog.admin
 {
     public partial class duyurular : System.Web.UI.Page

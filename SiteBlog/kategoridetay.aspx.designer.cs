@@ -11,16 +11,16 @@ namespace SiteBlog
 {
 
 
-    public partial class _default
+    public partial class kategoridetay
     {
 
         /// <summary>
-        /// dl_makale denetimi.
+        /// dl_kategori denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl_makale;
+        protected global::System.Web.UI.WebControls.DataList dl_kategori;
     }
 }

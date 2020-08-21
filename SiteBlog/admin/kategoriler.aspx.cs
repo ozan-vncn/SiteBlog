@@ -20,7 +20,7 @@ namespace SiteBlog.admin
             islem = Request.QueryString["islem"];
             if (islem=="sil")
             {
-                SqlCommand cmdsil=new SqlCommand("delete from Kategori where kategoriID='"+ kategoriID +"'",baglan.baglan());
+                SqlCommand cmdsil=new SqlCommand("Delete from Kategori where kategoriID='"+ kategoriID +"'",baglan.baglan());
                 cmdsil.ExecuteNonQuery();
             }
             if (Page.IsPostBack == false)

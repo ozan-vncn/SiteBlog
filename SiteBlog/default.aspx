@@ -26,7 +26,7 @@
                     <div class="auto-style3" style="background-color: #C0C0C0; background-repeat: repeat-x; line-height: 40px;">
 
                         <div style="width: 40px; height: 40px; float: left">
-                            <asp:Image ID="Image3" runat="server" Height="40px" ImageUrl='<%# Eval("kategoriResim") %>' Width="40px" />
+                            <asp:Image ID="Image3" runat="server" Height="40px" ImageUrl=<%# Eval("kategoriResim") %> Width="40px" />
                         </div>
                         <div style="width: 650px; height: 40px; float: left">
                             <a href="makaledetay.aspx?makaleID=<%#Eval("makaleID") %>"><asp:Label ID="Label1" runat="server" Font-Size="20pt" Text='<%# Eval("makaleBaslik") %>' ForeColor="#333333"></asp:Label></a>

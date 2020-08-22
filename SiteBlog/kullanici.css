@@ -15,6 +15,24 @@ a:hover{
     font-weight:bolder;
 }
 
+.buttonGorsel {
+    background-color: #2a595c;
+    width: 100px;
+    height: 25px;
+    color: #fff;
+}
+
+    .buttonGorsel:hover {
+        background-color: rgba(42,89,92,0.70);
+    }
+
+.textboxGorsel {
+    width: 150px;
+    height: 25px;
+    border: 1px dotted #2a595c;
+}
+
+
 .menubuton {
     float:left;
     width:100px;

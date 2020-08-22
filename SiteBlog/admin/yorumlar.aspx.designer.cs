@@ -7,101 +7,83 @@
 // </otomatik üretildi>
 //------------------------------------------------------------------------------
 
-namespace SiteBlog
+namespace SiteBlog.admin
 {
 
 
-    public partial class makaledetay
+    public partial class yorumlar
     {
 
         /// <summary>
-        /// dl_makale denetimi.
+        /// btn_yorumArti denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl_makale;
+        protected global::System.Web.UI.WebControls.Button btn_yorumArti;
 
         /// <summary>
-        /// txt_yorumIcerik denetimi.
+        /// btn_yorumEksi denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_yorumIcerik;
+        protected global::System.Web.UI.WebControls.Button btn_yorumEksi;
 
         /// <summary>
-        /// txt_adSoyad denetimi.
+        /// pnl_onaysızYorum denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_adSoyad;
+        protected global::System.Web.UI.WebControls.Panel pnl_onaysızYorum;
 
         /// <summary>
-        /// txt_eMail denetimi.
+        /// dl_yorum denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_eMail;
+        protected global::System.Web.UI.WebControls.DataList dl_yorum;
 
         /// <summary>
-        /// btn_yorumEkle denetimi.
+        /// btn_ooArti denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_yorumEkle;
+        protected global::System.Web.UI.WebControls.Button btn_ooArti;
 
         /// <summary>
-        /// lbl_bilgi denetimi.
+        /// btn_ooEksi denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_bilgi;
+        protected global::System.Web.UI.WebControls.Button btn_ooEksi;
 
         /// <summary>
-        /// RequiredFieldValidator1 denetimi.
+        /// pnl_yorumOnayli denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Panel pnl_yorumOnayli;
 
         /// <summary>
-        /// RequiredFieldValidator2 denetimi.
+        /// dl_yorumOnay denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
-        /// <summary>
-        /// RequiredFieldValidator3 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-
-        /// <summary>
-        /// RegularExpressionValidator1 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.DataList dl_yorumOnay;
     }
 }

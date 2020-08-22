@@ -56,6 +56,7 @@ namespace SiteBlog.admin
                 SqlCommand cmdkategoriekle = new SqlCommand("insert into Kategori(kategoriAd,kategoriSira,kategoriResim) Values('" + txt_kategoriAdi.Text + "','" + txt_sira.Text + "','/kresim/" + fu_kategoriResim.FileName + "')", baglan.baglan());
                 cmdkategoriekle.ExecuteNonQuery();
                 Response.Redirect("kategoriler.aspx");
+
                 fu_kategoriResim.SaveAs(Server.MapPath("/kresim/" + fu_kategoriResim.FileName));
 
             }

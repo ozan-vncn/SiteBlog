@@ -31,7 +31,7 @@ namespace SiteBlog.admin
                 
 
                 //kategorileri getir
-                SqlCommand cmdkgetir = new SqlCommand("Select* from Kategori", baglan.baglan());
+                SqlCommand cmdkgetir = new SqlCommand("Select * from Kategori", baglan.baglan());
                 SqlDataReader drkgetir = cmdkgetir.ExecuteReader();
 
                 ddl_kategori.DataTextField = "kategoriAd";
@@ -41,7 +41,7 @@ namespace SiteBlog.admin
                 ddl_kategori.DataBind();
 
                 //makale getirilir
-                SqlCommand cmdmgetir = new SqlCommand("Select*from Makale", baglan.baglan());
+                SqlCommand cmdmgetir = new SqlCommand("Select * from Makale", baglan.baglan());
                 SqlDataReader drmgetir = cmdmgetir.ExecuteReader();
                 dl_makaleGetir.DataSource = drmgetir;
                 dl_makaleGetir.DataBind();
@@ -65,7 +65,7 @@ namespace SiteBlog.admin
             {
                 fu_slider.SaveAs(Server.MapPath("/sresim/" + fu_slider.FileName));
 
-                SqlCommand cmdmekle = new SqlCommand("insert into Makale(makaleBaslik,makaleOzet,makaleIcerik,makaleResim,kategoriID) Values('" + txt_makaleBaslik.Text + "','" + txt_makaleOzet.Text + "','" + txt_makaleIcerik.Text + "','/sresim" + fu_slider.FileName + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
+                SqlCommand cmdmekle = new SqlCommand("insert into Makale(makaleBaslik,makaleOzet,makaleIcerik,makaleResim,kategoriID) Values('" + txt_makaleBaslik.Text + "','" + txt_makaleOzet.Text + "','" + txt_makaleIcerik.Text + "','/sresim/" + fu_slider.FileName + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
                 cmdmekle.ExecuteNonQuery();
 
                 SqlCommand cmdkadet = new SqlCommand("Update Kategori set kategoriAdet=kategoriAdet+1 where kategoriID='"+ddl_kategori.SelectedValue+"'",baglan.baglan());

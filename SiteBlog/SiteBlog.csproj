@@ -76,6 +76,8 @@
     <Content Include="admin\kategoriler.aspx" />
     <Content Include="admin\makaleguncelle.aspx" />
     <Content Include="admin\makaleler.aspx" />
+    <Content Include="admin\yorumguncelle.aspx" />
+    <Content Include="admin\yorumlar.aspx" />
     <Content Include="default.aspx" />
     <Content Include="hakkimda.aspx" />
     <Content Include="iletisim.aspx" />
@@ -83,6 +85,8 @@
     <Content Include="kullanici.css" />
     <Content Include="makaledetay.aspx" />
     <Content Include="tema\duyuru.png" />
+    <Content Include="tema\düzenle-png-2.ico" />
+    <Content Include="tema\yorum.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +153,20 @@
     <Compile Include="admin\makaleler.aspx.designer.cs">
       <DependentUpon>makaleler.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\yorumguncelle.aspx.cs">
+      <DependentUpon>yorumguncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\yorumguncelle.aspx.designer.cs">
+      <DependentUpon>yorumguncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\yorumlar.aspx.cs">
+      <DependentUpon>yorumlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\yorumlar.aspx.designer.cs">
+      <DependentUpon>yorumlar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,7 +224,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="admin\kresim\" />
     <Folder Include="kresim\" />
     <Folder Include="sresim\" />
   </ItemGroup>

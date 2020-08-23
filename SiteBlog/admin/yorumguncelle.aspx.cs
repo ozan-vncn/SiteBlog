@@ -10,14 +10,15 @@ namespace SiteBlog.admin
 {
     public partial class yorumguncelle : System.Web.UI.Page
     {
-        Sqlbaglantisi baglan =new Sqlbaglantisi();
+        Sqlbaglantisi baglan = new Sqlbaglantisi();
         string yorumID = "";
+        string makaleID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             yorumID = Request.QueryString["yorumID"];
-            if (Page.IsPostBack==false)
+            if (Page.IsPostBack == false)
             {
-                SqlCommand cmdygetir = new SqlCommand("Select*from Yorum where yorumID='"+yorumID+"'", baglan.baglan());
+                SqlCommand cmdygetir = new SqlCommand("Select*from Yorum where yorumID='" + yorumID + "'", baglan.baglan());
                 SqlDataReader drygetir = cmdygetir.ExecuteReader();
 
                 DataTable dtygetir = new DataTable("tablo");
@@ -32,9 +33,36 @@ namespace SiteBlog.admin
 
         protected void btn_guncelle_Click(object sender, EventArgs e)
         {
-            SqlCommand cmdonay = new SqlCommand("Update Yorum Set yorumAdSoyad='"+txt_adSoyad.Text+"', yorumIcerik='"+txt_icerik.Text+"', yorumOnay='"+cbox_onay.Checked+"' where yorumID='"+yorumID+"'", baglan.baglan());
+            makaleID = Request.QueryString["makaleID"];
+
+
+
+            SqlCommand cmdonay = new SqlCommand("Update Yorum Set yorumAdSoyad='" + txt_adSoyad.Text + "', yorumIcerik='" + txt_icerik.Text + "', yorumOnay='" + cbox_onay.Checked + "' where yorumID='" + yorumID + "'", baglan.baglan());
             cmdonay.ExecuteNonQuery();
-            Response.Redirect("yorumlar.aspx");
+
+
+            //onaylı yorum sayısını gösterme
+            if (cbox_onay.Checked == true)
+            {
+                SqlCommand cmdekle = new SqlCommand("Update Makale Set makaleYorumSayisi=makaleYorumSayisi+1 where makaleID='" + makaleID + "'", baglan.baglan());
+                cmdekle.ExecuteNonQuery();
+                Response.Redirect("yorumlar.aspx");
+
+            }
+
+            if (cbox_onay.Checked==false)
+            {
+                SqlCommand cmdazalt = new SqlCommand("Update Makale set makaleYorumSayisi=makaleYorumSayisi-1 where makaleID='" + makaleID + "'", baglan.baglan());
+                cmdazalt.ExecuteNonQuery();
+
+                Response.Redirect("yorumlar.aspx");
+            }
+
+
+
+
+
+
         }
     }
 }

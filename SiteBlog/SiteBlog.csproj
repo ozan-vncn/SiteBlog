@@ -76,6 +76,7 @@
     <Content Include="admin\kategoriler.aspx" />
     <Content Include="admin\makaleguncelle.aspx" />
     <Content Include="admin\makaleler.aspx" />
+    <Content Include="admin\yorumcevap.aspx" />
     <Content Include="admin\yorumguncelle.aspx" />
     <Content Include="admin\yorumlar.aspx" />
     <Content Include="default.aspx" />
@@ -84,6 +85,7 @@
     <Content Include="kategoridetay.aspx" />
     <Content Include="kullanici.css" />
     <Content Include="makaledetay.aspx" />
+    <Content Include="tema\admin.ico" />
     <Content Include="tema\duyuru.png" />
     <Content Include="tema\düzenle-png-2.ico" />
     <Content Include="tema\yorum.png" />
@@ -152,6 +154,13 @@
     </Compile>
     <Compile Include="admin\makaleler.aspx.designer.cs">
       <DependentUpon>makaleler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\yorumcevap.aspx.cs">
+      <DependentUpon>yorumcevap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\yorumcevap.aspx.designer.cs">
+      <DependentUpon>yorumcevap.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\yorumguncelle.aspx.cs">
       <DependentUpon>yorumguncelle.aspx</DependentUpon>

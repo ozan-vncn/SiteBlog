@@ -19,7 +19,7 @@ namespace SiteBlog
         {
             makaleID = Request.QueryString["makaleID"];
 
-            if (Page.IsPostBack==false)
+            if (Page.IsPostBack == false)
             {
                 //makale Getir
                 SqlCommand cmdmakale = new SqlCommand("SELECT dbo.Makale.makaleBaslik, dbo.Makale.makaleIcerik, dbo.Makale.makaleTarih, dbo.Makale.makaleOkunma, dbo.Makale.makaleYorumSayisi,dbo.Makale.makaleID, dbo.Kategori.kategoriResim, dbo.Kategori.kategoriID FROM dbo.Kategori INNER JOIN dbo.Makale ON dbo.Kategori.kategoriID = dbo.Makale.kategoriID where dbo.Makale.makaleID='" + makaleID + "'", baglan.baglan());
@@ -30,8 +30,15 @@ namespace SiteBlog
 
                 //makale okunma sayısı
 
-                SqlCommand cmdOkunma = new SqlCommand("Update Makale Set makaleOkunma=makaleOkunma+1 where makaleID='"+makaleID+"'", baglan.baglan());
+                SqlCommand cmdOkunma = new SqlCommand("Update Makale Set makaleOkunma=makaleOkunma+1 where makaleID='" + makaleID + "'", baglan.baglan());
                 cmdOkunma.ExecuteNonQuery();
+
+                //yorum getirme
+                SqlCommand cmdygetir = new SqlCommand("Select*from Yorum where makaleID='" + makaleID + "' and yorumOnay=1", baglan.baglan());
+                SqlDataReader drygetir = cmdygetir.ExecuteReader();
+
+                dl_yorumGetir.DataSource = drygetir;
+                dl_yorumGetir.DataBind();
 
             }
 
@@ -52,6 +59,11 @@ namespace SiteBlog
             txt_eMail.Text = "";
             txt_yorumIcerik.Text = "";
 
+
+        }
+
+        protected void dl_makale_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

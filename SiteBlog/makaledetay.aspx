@@ -8,11 +8,21 @@
         .auto-style4 {
             height: 199px;
         }
+        .auto-style5 {
+            font-weight: bold;
+            font-size: 24px;
+            color: white;
+        }
+        .auto-style6 {
+            float: left;
+            height: auto;
+            width: 630px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="width: 690px; height: auto; margin: 0 auto;">
-        <asp:DataList ID="dl_makale" runat="server" Width="690px">
+        <asp:DataList ID="dl_makale" runat="server" Width="690px" OnSelectedIndexChanged="dl_makale_SelectedIndexChanged">
             <ItemTemplate>
                 <div style="width: 690px; margin: 0 auto; height: auto;">
                     <div class="auto-style3" style="background-color: #C0C0C0; background-repeat: repeat-x; line-height: 40px;">
@@ -51,12 +61,43 @@
             </ItemTemplate>
         </asp:DataList>
     </div>
+
     <div style="height: 30px; width: 100%"></div>
-    <div style="background-color: #2a595c; color: white; height: 30px; width: 100%; text-align: center; font-size: 24px; font-weight: bolder">Yorum Yap </div>
-    <div style="height: 10px; width: 100%"></div>
+    <div style="background-color: #2a595c; height: 30px; width: 100%; text-align: center; " class="auto-style5">Yorumlar</div>
+    <div style="height:10px;width:100%;"></div>
+    <div style="width:690px;height:auto;margin:0 auto;">
+
+
+        <asp:DataList ID="dl_yorumGetir" runat="server">
+            <ItemTemplate>
+                <div style="width: 690px; height: auto; float: left; ">
+                    <div style="border-color:#2a595c; float: left; width: 50px; height: 60px; border: 1px dotted #2a595c">
+                        <asp:Image ID="Image4" runat="server" Height="60px" ImageUrl='<%# Eval("yorumResim") %>' Width="50px" />
+                    </div>
+                    <div class="auto-style6">
+                        <div style="float: left; width: 630px; height: 25px">
+                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("yorumAdSoyad") %>' Font-Size="18pt" ForeColor="#333333"></asp:Label>
+                            &nbsp;-<asp:Label ID="Label7" runat="server" Font-Size="12pt" ForeColor="Gray" Text='<%# Eval("yorumTarihi","{0:dd MMMM yyyy}") %>'></asp:Label>
+                        </div>
+                        <div style="float:left;width:630px;height:auto;">
+                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("yorumIcerik") %>' ForeColor="#666666"></asp:Label>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="float: left; width: 690px; height: 20px">
+                </div>
+            </ItemTemplate>
+        </asp:DataList>
+
+        
+    </div>
+    <div style="height: 30px; width: 100%"></div>
+    <div style="background-color: #2a595c; color: white; height: 30px; width: 100%; text-align: center; font-size: 24px; font-weight: bolder">Yorum Yap</div>
+   
+    <div style="height:10px;width:100%;"></div>
+
     <div style="height:200px">
-
-
         <div style="width: 330px; height: 200px; float: left; border: 1px dotted #2a595c;margin-left:5px;">
             <asp:TextBox ID="txt_yorumIcerik" placeHolder="Buraya Yorumunuzu Giriniz" runat="server" Height="199px" TextMode="MultiLine" Width="330px"></asp:TextBox>
         </div>

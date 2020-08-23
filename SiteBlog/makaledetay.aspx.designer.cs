@@ -24,6 +24,15 @@ namespace SiteBlog
         protected global::System.Web.UI.WebControls.DataList dl_makale;
 
         /// <summary>
+        /// dl_yorumGetir denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dl_yorumGetir;
+
+        /// <summary>
         /// txt_yorumIcerik denetimi.
         /// </summary>
         /// <remarks>

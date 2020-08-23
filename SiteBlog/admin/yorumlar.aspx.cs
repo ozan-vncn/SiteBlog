@@ -11,8 +11,26 @@ namespace SiteBlog.admin
     public partial class yorumlar : System.Web.UI.Page
     {
         Sqlbaglantisi baglan = new Sqlbaglantisi();
+        string yorumID = "";
+        string islem = "";
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            yorumID = Request.QueryString["yorumID"];
+            islem = Request.QueryString["islem"];
+            
+
+           
+            //Onaysız yorum silme
+            if (islem=="sil")
+            {
+                SqlCommand cmdsil = new SqlCommand("Delete from Yorum where yorumID='"+yorumID+"'", baglan.baglan());
+                cmdsil.ExecuteNonQuery();
+                Response.Redirect("yorumlar.aspx");
+            }
+
+
             if (Page.IsPostBack == false)
             {
                 pnl_onaysızYorum.Visible = false;

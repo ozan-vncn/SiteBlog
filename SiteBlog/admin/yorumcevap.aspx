@@ -1,14 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeBehind="yorumguncelle.aspx.cs" Inherits="SiteBlog.admin.yorumguncelle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeBehind="yorumcevap.aspx.cs" Inherits="SiteBlog.admin.yorumcevap" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
             width: 100%;
         }
         .auto-style2 {
-            width: 197px;
-        }
-        .auto-style3 {
-            border: 1px dotted #2a595c;
+            width: 224px;
         }
     </style>
 </asp:Content>
@@ -19,27 +16,21 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2" style="text-align: right">Gönderen Kişi:</td>
+            <td class="auto-style2" style="text-align: right">Admin:</td>
             <td>
-                <asp:TextBox ID="txt_adSoyad" runat="server" CssClass="auto-style3" Height="25px" Width="213px"></asp:TextBox>
+                <asp:TextBox ID="txt_AdSoyad" runat="server" CssClass="textboxGorsel" Width="200px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style2" style="text-align: right">Yorum:</td>
             <td>
-                <asp:TextBox ID="txt_icerik" runat="server" CssClass="textboxGorsel" Height="100px" TextMode="MultiLine" Width="400px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2" style="text-align: right">Onay:</td>
-            <td>
-                <asp:CheckBox ID="cbox_onay" runat="server" />
+                <asp:TextBox ID="txt_yorumIcerik" runat="server" CssClass="textboxGorsel" Height="100px" TextMode="MultiLine" Width="400px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style2" style="text-align: right">&nbsp;</td>
             <td>
-                <asp:Button ID="btn_guncelle" runat="server" CssClass="buttonGorsel" OnClick="btn_guncelle_Click" Text="Güncelle" />
+                <asp:Button ID="btn_yorumCevap" runat="server" CssClass="buttonGorsel" OnClick="btn_yorumCevap_Click" Text="Cevap Yaz" />
             </td>
         </tr>
         <tr>

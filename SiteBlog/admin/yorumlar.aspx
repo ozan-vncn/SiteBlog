@@ -57,11 +57,17 @@
                             <table class="auto-style1">
                                 <tr>
                                     <td class="auto-style2" style="font-size: 25px; text-align: right;">
-                                        <a href="yorumguncelle.aspx?yorumID=<%#Eval("yorumID") %>">✔</a>
+                                        <a href="yorumguncelle.aspx?yorumID=<%#Eval("yorumID") %>&makaleID=<%#Eval("makaleID") %>">✔</a>
 
                                     </td>
-                                    <td class="auto-style4" style="font-size: 25px; text-align: right;">❌</td>
-                                    <td style="font-size: 25px; text-align: right;">💬</td>
+                                    <td class="auto-style4" style="font-size: 25px; text-align: right;">
+                                        <a href="yorumlar.aspx?yorumID=<%#Eval("yorumID") %>&islem=sil">❌</a>
+
+                                    </td>
+                                    <td style="font-size: 25px; text-align: right;">
+                                        <a href="yorumcevap.aspx?makaleID=<%#Eval("makaleID") %>">💬</a>
+
+                                    </td>
                                 </tr>
                             </table>
 
@@ -112,7 +118,10 @@
                                 <tr>
                                     <td class="auto-style2" style="font-size: 25px; text-align: right;">&nbsp;</td>
                                     <td class="auto-style4" style="font-size: 25px; text-align: right;">&nbsp;</td>
-                                    <td style="font-size: 25px; text-align: right;">❌</td>
+                                    <td style="font-size: 25px; text-align: right;">
+                                        <a href="yorumguncelle.aspx?yorumID=<%#Eval("yorumID") %>&makaleID=<%#Eval("makaleID") %>">❌</a>
+
+                                    </td>
                                 </tr>
                             </table>
 

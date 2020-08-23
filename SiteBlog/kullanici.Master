@@ -105,7 +105,7 @@
                     </asp:ContentPlaceHolder>
                 </div>  
             </div> 
-            <div class="alt"></div>  
+              
         </div>
     </form>
 </body>

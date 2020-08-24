@@ -15,6 +15,11 @@ namespace SiteBlog.admin
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             duyurularID = Request.QueryString["duyurularID"];
             if (Page.IsPostBack==false)
             {

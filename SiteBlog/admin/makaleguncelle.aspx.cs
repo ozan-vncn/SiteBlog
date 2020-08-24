@@ -14,6 +14,11 @@ namespace SiteBlog.admin
         string makaleID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             makaleID = Request.QueryString["makaleID"];
             if (Page.IsPostBack == false)
             {
@@ -32,27 +37,14 @@ namespace SiteBlog.admin
 
         protected void btn_guncelle_Click(object sender, EventArgs e)
         {
-            if (fu_slider.HasFile)
-            {
-                fu_slider.SaveAs(Server.MapPath("/sresim/" + fu_slider.FileName));
-
-                SqlCommand cmdmguncelle = new SqlCommand("Update Makale Set makaleBaslik='" + txt_makaleBaslik.Text + "',makaleOzet='" + txt_makaleOzet.Text + "', makaleIcerik='" + txt_makaleIcerik + "',makaleYorumSayisi='" + txt_yorumSayi.Text + "',makaleResim='/sresim" + fu_slider.FileName + "'", baglan.baglan());
-                cmdmguncelle.ExecuteNonQuery();
-
-                Response.Redirect("makaleler.aspx");
-
-
-
-
-
-            }
-            else
-            {
+           
+            
+            
                 SqlCommand cmdmguncelle = new SqlCommand("Update Makale Set makaleBaslik='" + txt_makaleBaslik.Text + "',makaleOzet='" + txt_makaleOzet.Text + "', makaleIcerik='" + txt_makaleIcerik + "',makaleYorumSayisi='" + txt_yorumSayi.Text + "'", baglan.baglan());
                 cmdmguncelle.ExecuteNonQuery();
                 Response.Redirect("makaleler.aspx");
 
-            }
+            
         }
     }
 }

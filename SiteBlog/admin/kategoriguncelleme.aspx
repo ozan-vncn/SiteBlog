@@ -7,9 +7,6 @@
         .auto-style2 {
             width: 203px;
         }
-        .auto-style3 {
-            border: 1px dotted #2a595c;
-        }
         .auto-style4 {
             background-color: #2a595c;
             color: #fff;
@@ -38,12 +35,6 @@
             <td class="auto-style2" style="background-color: #669999; text-align: right;">Adet:</td>
             <td style="background-color: #669999">
                 <asp:TextBox ID="txt_kategoriAdet" runat="server" CssClass="textboxGorsel"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2" style="background-color: #669999; text-align: right;">Resim:</td>
-            <td style="background-color: #669999">
-                <asp:FileUpload ID="fileu_kategoriResim" runat="server" CssClass="auto-style3" Width="259px" />
             </td>
         </tr>
         <tr>

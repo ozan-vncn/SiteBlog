@@ -25,7 +25,8 @@ namespace SiteBlog.admin
 
             if (dr.Read())
             {
-                Response.Redirect("adminpanel.aspx");
+                Session["yoneticiKullanici"] = dr["yoneticiKullanici"];
+                Response.Redirect("duyurular.aspx");
             }
             else
             {

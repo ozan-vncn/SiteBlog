@@ -15,6 +15,11 @@ namespace SiteBlog.admin
         string islem = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["yoneticiKullanici"]==null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             makaleID = Request.QueryString["makaleID"];
             islem = Request.QueryString["islem"];
 
@@ -61,22 +66,17 @@ namespace SiteBlog.admin
 
         protected void btn_makaleEkle_Click(object sender, EventArgs e)
         {
-            if (fu_slider.HasFile)
-            {
-                fu_slider.SaveAs(Server.MapPath("/sresim/" + fu_slider.FileName));
+            
 
-                SqlCommand cmdmekle = new SqlCommand("insert into Makale(makaleBaslik,makaleOzet,makaleIcerik,makaleResim,kategoriID) Values('" + txt_makaleBaslik.Text + "','" + txt_makaleOzet.Text + "','" + txt_makaleIcerik.Text + "','/sresim/" + fu_slider.FileName + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
+                SqlCommand cmdmekle = new SqlCommand("insert into Makale(makaleBaslik,makaleOzet,makaleIcerik,kategoriID) Values('" + txt_makaleBaslik.Text + "','" + txt_makaleOzet.Text + "','" + txt_makaleIcerik.Text + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
                 cmdmekle.ExecuteNonQuery();
 
                 SqlCommand cmdkadet = new SqlCommand("Update Kategori set kategoriAdet=kategoriAdet+1 where kategoriID='"+ddl_kategori.SelectedValue+"'",baglan.baglan());
                 cmdkadet.ExecuteNonQuery();
 
                 Response.Redirect("makaleler.aspx");
-            }
-            else
-            {
-                btn_makaleEkle.Text = "Resim EKLE!";
-            }
+            
+            
         }
 
         protected void btn_makaledArti_Click(object sender, EventArgs e)

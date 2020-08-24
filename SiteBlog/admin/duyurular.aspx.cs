@@ -17,6 +17,11 @@ namespace SiteBlog.admin
         string islem = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             duyurularID = Request.QueryString["duyurularID"];
             islem = Request.QueryString["islem"];
             if (islem == "sil")

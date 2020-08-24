@@ -18,7 +18,7 @@ namespace SiteBlog
         {
             kategoriID = Request.QueryString["kategoriID"];
 
-            SqlCommand cmdkategori = new SqlCommand("SELECT dbo.Makale.makaleBaslik, dbo.Makale.makaleOzet,dbo.Makale.makaleID, dbo.Makale.makaleTarih, dbo.Makale.makaleOkunma, dbo.Makale.makaleYorumSayisi, dbo.Kategori.kategoriResim, dbo.Kategori.kategoriID FROM dbo.Kategori INNER JOIN dbo.Makale ON dbo.Kategori.kategoriID = dbo.Makale.kategoriID where dbo.Kategori.kategoriID='"+kategoriID+"'", baglan.baglan());
+            SqlCommand cmdkategori = new SqlCommand("SELECT dbo.Makale.makaleBaslik, dbo.Makale.makaleOzet,dbo.Makale.makaleID, dbo.Makale.makaleTarih, dbo.Makale.makaleOkunma, dbo.Makale.makaleYorumSayisi, dbo.Kategori.kategoriID FROM dbo.Kategori INNER JOIN dbo.Makale ON dbo.Kategori.kategoriID = dbo.Makale.kategoriID where dbo.Kategori.kategoriID='"+kategoriID+"'", baglan.baglan());
             SqlDataReader drkategori = cmdkategori.ExecuteReader();
             dl_kategori.DataSource = drkategori;
             dl_kategori.DataBind();

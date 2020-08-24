@@ -12,14 +12,18 @@
             padding:0;
             border:0;
         }
+        .auto-style1 {
+            float: left;
+            width: 298px;
+        }
     </style>
 </head>
 <body style="background-color:#e1e1e1">
     <form id="form1" runat="server">
-        <div style="height: 50px; background-color:#2a595c; color:#fff;">
+        <div style="height: 80px; background-color:#2a595c; color:#fff;">
 
-            <div style="float:left; width:250px; margin-top:20px;">Kullanıcı Adı: <asp:TextBox ID="txt_Kullanici" runat="server" Height="25px"></asp:TextBox></div>
-            <div style="float:left; width:210px; margin-top:20px;">Şifre: <asp:TextBox ID="txt_Sifre" runat="server" Height="25px" TextMode="Password"></asp:TextBox></div>
+            <div style="margin-top:20px;" class="auto-style1">Kullanıcı Adı: <asp:TextBox ID="txt_Kullanici" runat="server" Height="25px" Width="139px"></asp:TextBox></div>
+            <div style="float:left; width:210px; margin-top:20px;">Şifre: <asp:TextBox ID="txt_Sifre" runat="server" Height="25px" TextMode="Password" Width="106px"></asp:TextBox></div>
             <div style="float:left; width:250px; margin-top:20px;">
                 <asp:Button ID="Button1" runat="server" Text="GİRİŞ" Height="25px" Width="123px" BackColor="White" ForeColor="Blue" OnClick="Button1_Click"  /> </div>
             <div>

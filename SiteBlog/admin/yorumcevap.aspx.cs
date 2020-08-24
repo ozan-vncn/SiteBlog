@@ -14,7 +14,10 @@ namespace SiteBlog.admin
         string makaleID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
         }
 
         protected void btn_yorumCevap_Click(object sender, EventArgs e)

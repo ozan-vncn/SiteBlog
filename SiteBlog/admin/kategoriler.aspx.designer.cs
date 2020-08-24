@@ -60,15 +60,6 @@ namespace SiteBlog.admin
         protected global::System.Web.UI.WebControls.TextBox txt_sira;
 
         /// <summary>
-        /// fu_kategoriResim denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_kategoriResim;
-
-        /// <summary>
         /// btn_kategoriEkle denetimi.
         /// </summary>
         /// <remarks>

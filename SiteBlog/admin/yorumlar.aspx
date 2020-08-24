@@ -63,10 +63,15 @@
                                     <td class="auto-style4" style="font-size: 25px; text-align: right;">
                                         <a href="yorumlar.aspx?yorumID=<%#Eval("yorumID") %>&islem=sil">❌</a>
 
-                                    </td>
+                                        
                                     <td style="font-size: 25px; text-align: right;">
                                         <a href="yorumcevap.aspx?makaleID=<%#Eval("makaleID") %>">💬</a>
 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style2" style="font-size: 25px; text-align: right;">&nbsp;</td>
+                                    <td class="auto-style4" style="font-size: 25px; text-align: right;">&nbsp;<td style="font-size: 25px; text-align: right;">&nbsp;</td>
                                     </td>
                                 </tr>
                             </table>

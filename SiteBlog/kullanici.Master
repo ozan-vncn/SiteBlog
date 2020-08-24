@@ -32,14 +32,14 @@
                 <div style="width: 700px; height: 40px; float: right">
                     <a href="default.aspx"><div class="menubuton">
                         Bloğum</div></a>
-                    <a href="hakkimda.aspx"><div class="menubuton">
-                        Hakkımda
-                    </div ></a>
                     <a href="iletisim.aspx"><div class="menubuton">
                         İletişim
                     </div></a>
+                    </div >
+                    
                 </div>
-            </div>
+            
+            
             <div class="govde">
                  
                 <div class="govdesol">
@@ -87,8 +87,7 @@
                                 <table class="auto-style1">
                                     <tr>
                                         <td>
-                                            <asp:Image ID="Image2" runat="server" Height="30px" ImageUrl='<%# Eval("kategoriResim") %>' Width="30px" />
-                                        </td>
+                                            &nbsp;</td>
                                         <td style="width: 230px; text-decoration: none; font-size: large; color: #333333;">
                                            <a href="kategoridetay.aspx?kategoriID=<%#Eval("kategoriID") %>"> <asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal></a>
                                             &nbsp;(<asp:Literal ID="Literal5" runat="server" Text='<%# Eval("kategoriAdet") %>'></asp:Literal>

@@ -16,6 +16,11 @@ namespace SiteBlog.admin
         string islem = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             kategoriID = Request.QueryString["kategoriID"];
             islem = Request.QueryString["islem"];
             if (islem=="sil")
@@ -49,19 +54,16 @@ namespace SiteBlog.admin
 
         protected void btn_kategoriEkle_Click(object sender, EventArgs e)
         {
-            if (fu_kategoriResim.HasFile)//içinde resim varsa kategori ekleme yapılır
-            {
+           
 
 
-                SqlCommand cmdkategoriekle = new SqlCommand("insert into Kategori(kategoriAd,kategoriSira,kategoriResim) Values('" + txt_kategoriAdi.Text + "','" + txt_sira.Text + "','/kresim/" + fu_kategoriResim.FileName + "')", baglan.baglan());
+                SqlCommand cmdkategoriekle = new SqlCommand("insert into Kategori(kategoriAd,kategoriSira) Values('" + txt_kategoriAdi.Text + "','" + txt_sira.Text+  "')", baglan.baglan());
                 cmdkategoriekle.ExecuteNonQuery();
                 Response.Redirect("kategoriler.aspx");
 
-                fu_kategoriResim.SaveAs(Server.MapPath("/kresim/" + fu_kategoriResim.FileName));
+               
 
-            }
-            else
-                btn_kategoriEkle.Text = "Resim Ekle";
+           
         }
 
         protected void btn_kategoriduzenleArtı_Click(object sender, EventArgs e)

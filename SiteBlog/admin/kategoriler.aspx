@@ -63,19 +63,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="text-align: right">Resim:</td>
+                    <td class="auto-style3" style="text-align: right">&nbsp;</td>
                     <td class="auto-style4">
-                        <asp:FileUpload ID="fu_kategoriResim" runat="server" CssClass="textboxGorsel" Width="300px" />
+                        <asp:Button ID="btn_kategoriEkle" runat="server" CssClass="buttonGorsel" OnClick="btn_kategoriEkle_Click" Text="Ekle" />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2" style="text-align: right">&nbsp;</td>
                     <td>
-                        <asp:Button ID="btn_kategoriEkle" runat="server" CssClass="buttonGorsel" Text="Ekle" OnClick="btn_kategoriEkle_Click" />
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="text-align: right">&nbsp;</td>
+                    <td class="auto-style2" style="text-align: right"></td>
                     <td>&nbsp;</td>
                 </tr>
             </table>

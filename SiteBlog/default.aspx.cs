@@ -14,7 +14,7 @@ namespace SiteBlog
         Sqlbaglantisi baglan = new Sqlbaglantisi();
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlCommand cmdmakale = new SqlCommand("SELECT dbo.Makale.makaleBaslik, dbo.Makale.makaleOzet, dbo.Makale.makaleTarih,dbo.Makale.makaleID, dbo.Makale.makaleOkunma, dbo.Makale.makaleYorumSayisi, dbo.Kategori.kategoriResim FROM dbo.Kategori INNER JOIN dbo.Makale ON dbo.Kategori.kategoriID = dbo.Makale.kategoriID", baglan.baglan());
+            SqlCommand cmdmakale = new SqlCommand("SELECT dbo.Makale.makaleBaslik, dbo.Makale.makaleOzet, dbo.Makale.makaleTarih,dbo.Makale.makaleID, dbo.Makale.makaleOkunma, dbo.Makale.makaleYorumSayisi FROM dbo.Kategori INNER JOIN dbo.Makale ON dbo.Kategori.kategoriID = dbo.Makale.kategoriID order by makaleID desc", baglan.baglan());
             SqlDataReader drmakalegetir = cmdmakale.ExecuteReader();
              
             dl_makale.DataSource = drmakalegetir;

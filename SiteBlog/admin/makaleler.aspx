@@ -68,10 +68,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="text-align: right">Slider:</td>
+                    <td class="auto-style2" style="text-align: right">&nbsp;</td>
                     <td>
-                        <asp:FileUpload ID="fu_slider" runat="server" CssClass="textboxGorsel" Width="500px" />
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2" style="text-align: right">&nbsp;</td>
